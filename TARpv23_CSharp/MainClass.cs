@@ -1,4 +1,9 @@
+<<<<<<< HEAD
+﻿using System;
+using System.Collections;
+=======
 using System;
+>>>>>>> 0468b72540f7d86e319868c9b3fcaa872569b337
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -227,6 +232,24 @@ namespace TARpv23_CSharp
 
             // 4. Ütle kasutajale "Osta elevant ära!". Senikaua korda küsimust, kuni kasutaja lõpuks ise kirjutab "elevant".
             string Kasutaja_sisestamine = " ";
+<<<<<<< HEAD
+            while (Kasutaja_sisestamine.ToLower() != "elevant")
+            {
+                Console.WriteLine("Osta elevant ära!");
+                Kasutaja_sisestamine = Console.ReadLine(); 
+            }
+            Console.WriteLine("Müüdud!");
+
+            // 4.1. Ütle kasutajale "Osta elevant ära!". Senikaua korda küsimust, kuni kasutaja lõpuks ise kirjutab "elevant".
+            string Kasutaja_sisestamine_1 = " ";
+            do
+            {
+                Console.WriteLine("Osta elevant ära!");
+                Kasutaja_sisestamine_1 = Console.ReadLine();
+            }
+            while (!string.Equals(Kasutaja_sisestamine_1, "elevant", StringComparison.OrdinalIgnoreCase));
+            Console.WriteLine("Müüdud!"); 
+=======
             do
             {
                 Console.WriteLine("Osta elevant ära!");
@@ -234,13 +257,18 @@ namespace TARpv23_CSharp
             }
             while (!string.Equals(Kasutaja_sisestamine, "elevant", StringComparison.OrdinalIgnoreCase));
             Console.WriteLine("Müüdud!");
+>>>>>>> 0468b72540f7d86e319868c9b3fcaa872569b337
 
             //5. Mis arv mõtles välja arvuti? Kasuta vähemalt 5 katset, et seda teada.
             int arvutiArv = random.Next(1, 25);
             int kasutajaArv;
             int katsed = 0;
             bool arvatiOigesti = false;
+<<<<<<< HEAD
+            Console.WriteLine("Programm on mõelnud välja arvu vahemikus 1 kuni 25, sul on 5 katset.");
+=======
             Console.WriteLine("Programm on mõelnud välja arvu vahemikus 1 kuni 50, sul on 5 katset.");
+>>>>>>> 0468b72540f7d86e319868c9b3fcaa872569b337
             while (katsed < 5 && !arvatiOigesti)
             {
                 Console.Write("Sisesta oma arvatav arv: ");
@@ -275,6 +303,78 @@ namespace TARpv23_CSharp
             var numbrite_sorteerimine = neli_numbrit.OrderByDescending(d => d).ToArray();
             string suurim_number = string.Concat(numbrite_sorteerimine);
             Console.WriteLine("Swuurim number: " + suurim_number);
+<<<<<<< HEAD
+
+            // 6.1. Küsi kasutajalt 4 arvu ning väljasta nendest koostatud suurim neliarvuline arv.
+            int[] neliArvu = new int[4];
+            for (int i = 0; i < 4; i++)
+            {
+                Console.Write("Sisestage neli numbrit {0}: ", i + 1);
+                neliArvu[i] = int.Parse(Console.ReadLine());
+            } 
+            Array.Sort(neliArvu);
+            Array.Reverse(neliArvu);;
+            string suurimArv = string.Join("", neliArvu);
+            Console.WriteLine("Swuurim number: " + int.Parse (suurimArv)); 
+            
+            //II. osa listid ja sõnastikud 
+            List<string> abc = new List<string> ();
+            try
+            {
+                foreach (string rida in File.ReadAllLines(@"..\..\..\ABC.txt"))
+                {
+                    abc.Add(rida);
+                }
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Fail ei saa leida!");
+            }
+            foreach (string e in abc)
+            {
+                Console.WriteLine(e);
+            }
+            Console.ReadLine(); 
+
+            //
+            ArrayList arrayList = new ArrayList ();
+            arrayList.Add("Esimene");
+            arrayList.Add("Teine");
+            arrayList.Add("Kolmas");
+            Console.WriteLine("Otsing: ");
+            string vas=Console.ReadLine();
+            if (vas != null && arrayList.Contains(vas))
+            {
+                Console.WriteLine("Otsitav element asub " + arrayList.IndexOf(vas) +".kohal");
+            }
+            else
+            {
+                Console.WriteLine("Kokku oli" + arrayList.Count + " elemente, vaid otsitav puudub");
+            }
+            ArrayList arrayList1 = new ArrayList();
+            arrayList1.Clear ();
+            arrayList1.Insert(1, "Anna");
+            arrayList1.Insert(0, "Inna");
+            Console.WriteLine(); 
+
+            ///III. osa OOP 
+            List<Inimene> inimesed = new List<Inimene> ();
+            Inimene inimene1 = new Inimene ();
+            inimene1.Nimi = "Pjotr 1";
+            inimene1.Vanus = 352;
+            Inimene inimene2 = new Inimene ("Jelizaveta");
+            inimene2.Vanus = 98;
+            Inimene inimene3 = new Inimene("Daria", 17);
+            inimesed.Add(inimene1);
+            inimesed.Add(inimene2);
+            inimesed.Add(inimene3);
+            inimesed.Add(new Inimene ("Valeria", 17));
+            foreach (Inimene inimene in inimesed)
+            {
+                Console.WriteLine(inimene.Nimi + " on " + inimene.Vanus + "aasta vana");
+            }
+=======
+>>>>>>> 0468b72540f7d86e319868c9b3fcaa872569b337
         }
     }
 }

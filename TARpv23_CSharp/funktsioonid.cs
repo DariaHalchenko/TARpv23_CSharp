@@ -113,8 +113,16 @@ namespace TARpv23_CSharp
             {
                 arvud[i] = N;
                 N++;
+<<<<<<< HEAD
+            } 
+            return arvud;
+        }
+    }
+} 
+=======
             }
             return arvud;
         }
     }
 } 
+>>>>>>> 0468b72540f7d86e319868c9b3fcaa872569b337
