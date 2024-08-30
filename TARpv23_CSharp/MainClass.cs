@@ -263,18 +263,18 @@ namespace TARpv23_CSharp
             if (arvatiOigesti = false)
             {
                 Console.WriteLine($"Kahjuks ei arvanud sa õiget arvu ära. Programm mõtles välja arvu (arvutiArv).");
-
-                // 6. Küsi kasutajalt 4 arvu ning väljasta nendest koostatud suurim neliarvuline arv.
-                int[] neli_numbrit = new int[4];
-                for (int i = 0; i < 4; i++)
-                {
-                    Console.Write("Sisestage neli numbrit {0}: ", i + 1);
-                    neli_numbrit[i] = int.Parse(Console.ReadLine());
-                }
-                var numbrite_sorteerimine = neli_numbrit.OrderByDescending(d => d).ToArray();
-                string suurim_number = string.Concat(numbrite_sorteerimine);
-                Console.WriteLine("Swuurim number: " + suurim_number);
             }
+
+            // 6. Küsi kasutajalt 4 arvu ning väljasta nendest koostatud suurim neliarvuline arv.
+            int[] neli_numbrit = new int[4];
+            for (int i = 0; i < 4; i++)
+            {
+                 Console.Write("Sisestage neli numbrit {0}: ", i + 1);
+                 neli_numbrit[i] = int.Parse(Console.ReadLine());
+            }
+            var numbrite_sorteerimine = neli_numbrit.OrderByDescending(d => d).ToArray();
+            string suurim_number = string.Concat(numbrite_sorteerimine);
+            Console.WriteLine("Swuurim number: " + suurim_number);
         }
     }
 }
