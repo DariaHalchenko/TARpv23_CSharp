@@ -1,0 +1,7 @@
+﻿Tallinn - Harjumaa 
+Tartu - Tartumaa 
+Pärnu - Pärnumaa
+Narva - Ida-Virumaa
+Kärdla - Hiiumaa 
+Valga - Valgamaa 
+
