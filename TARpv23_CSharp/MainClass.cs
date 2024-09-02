@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System;
 using System.Collections.Generic;
@@ -7,6 +7,7 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 namespace TARpv23_CSharp
 {
     public class MainClass
@@ -333,10 +334,17 @@ namespace TARpv23_CSharp
                 Console.WriteLine("Kokku oli" + arrayList.Count + " elemente, vaid otsitav puudub");
             }
             ArrayList arrayList1 = new ArrayList();
-            arrayList1.Clear ();
-            arrayList1.Insert(1, "Anna");
-            arrayList1.Insert(0, "Inna");
-            Console.WriteLine(); 
+            arrayList1.Insert(0, "Inna");  
+            arrayList1.Insert(1, "Anna"); 
+            foreach (var item in arrayList1)
+            {
+                Console.WriteLine(item);
+            }
+            //ArrayList arrayList1 = new ArrayList();
+            //arrayList1.Clear ();
+            //arrayList1.Insert(1, "Anna");
+            //arrayList1.Insert(0, "Inna");
+            //Console.WriteLine(); 
 
             ///III. osa OOP 
             List<Inimene> inimesed = new List<Inimene> ();
@@ -352,8 +360,149 @@ namespace TARpv23_CSharp
             inimesed.Add(new Inimene ("Valeria", 17));
             foreach (Inimene inimene in inimesed)
             {
-                Console.WriteLine(inimene.Nimi + " on " + inimene.Vanus + "aasta vana");
+                Console.WriteLine(inimene.Nimi + " on " + inimene.Vanus + " aasta vana");
             }
+            Auto auto1 = new Auto("666 MAX", Color.NavajoWhite, inimene1);
+            Auto auto2 = new Auto("345 VKD", Color.DeepPink, inimene2);
+            Auto auto3 = new Auto("789 ABC", Color.DarkRed, inimene3);
+            auto1.KelleOmaAuto();
+            Dictionary<Auto, Inimene> register = new Dictionary<Auto, Inimene>();
+            register.Add(auto1, inimene1);
+            register.Add(auto2, inimene2);
+            register.Add(auto3, inimene3);
+            foreach (var item in register)
+            {
+                Console.WriteLine($"{item.Key.Regnumber} - {item.Value.Nimi}");
+            }
+            foreach (KeyValuePair<Auto, Inimene> pair in register)
+            {
+                Console.WriteLine(pair.Key.Regnumber + "-" + pair.Value.Nimi);
+            }
+
+            //Ülesanne 2
+            //Antud on 20 juhusliku numbri nimekiri.Kirjutage selle elemendid ümber uueks loeteluks järgmiselt: kõigepealt kõik paarilised arvud, seejärel kõik paaritu arvud.
+            List<int> numbrid = new List<int>();
+            for (int i = 0; i < 20; i++)
+            {
+                numbrid.Add(random.Next(0, 101));
+            }
+            List<int> paarisNumbrid = numbrid.Where(n => n % 2 == 0).ToList();
+            List<int> parituNumbrid = numbrid.Where(n => n % 2 != 0).ToList();
+            List<int> sortNumbrid = paarisNumbrid.Concat(parituNumbrid).ToList();
+            Console.WriteLine("Sorteeritud numbers : ");
+            sortNumbrid.ForEach(n => Console.WriteLine(n + " "));
+
+            //Ülesanne 1
+            Console.WriteLine("Sisesta numbrid");
+            string numbstr = Console.ReadLine();
+            string[] numblist = numbstr.Split(" ");
+            int[] newlist = new int[numblist.Length];
+            for (int i = 0; i < numblist.Length; i++)
+            {
+                int a_1;
+                if (i == 0)
+                {
+                    a_1 = int.Parse(numblist[numblist.Length - 1]) + int.Parse(numblist[i + 1]);
+                }
+                else if (i == numblist.Length - 1)
+                {
+                    a_1 = int.Parse(numblist[i - 1]) + int.Parse(numblist[0]);
+                }
+                else
+                {
+                    a_1 = int.Parse(numblist[i - 1]) + int.Parse(numblist[i + 1]);
+                }
+
+                newlist[i] = a_1;
+            }
+            Console.WriteLine("New list of sums"); 
+            Console.WriteLine(string.Join(" ", newlist));
+
+
+            //// Ülesanne 4
+            //List<int> list = new List<int>();
+            //List<int> list1 = new List<int>();
+            //for (int i = 0; i < random.Next(1, 100); i++)
+            //{
+            //    int a_2 = random.Next(1, 100);
+            //    list.Add(a_2);
+            //}
+            //foreach (int i in list)
+            //{
+            //    Console.Write(i + " ");
+            //}
+            //list.Insert(0, list[list.Count - 1]);
+            //list.Insert(list.Count, list[1]);
+            //Console.WriteLine();
+            //for (int i = 1; i < list.Count - 1; i++)
+            //{
+            //    list1.Insert(i - 1, list[i - 1] + list[i + 1]);
+            //}
+            //foreach (int i in list1)
+            //{
+            //    Console.Write(i + " ");
+            //}
+            //while (true)
+            //{
+            //    Console.WriteLine("\n1-Vaadake maakondi ja pealinnu\n2-Lisa maakond ja linnˇ\n3-Leia pealinn või maakond");
+            //    int o = int.Parse(Console.ReadLine());
+
+            //    if (o == 0)
+            //    {
+            //        break;
+            //    }
+            //    else if (o == 1)
+            //    {
+            //        List<string> list_failist = new List<string>();
+            //        try
+            //        {
+            //            foreach (string rida in File.ReadAllLines(@"..\..\..\pealinna_maakond.txt"))
+            //            {
+            //                list_failist.Add(rida);
+            //            }
+            //        }
+            //        catch (Exception)
+            //        {
+            //            Console.WriteLine("Viga failiga");
+            //        }
+            //        string key;
+            //        string value;
+            //        Dictionary<string, string> maakond_linn = new Dictionary<string, string>();
+            //        foreach (var rida in list_failist)
+            //        {
+            //            key = rida.Split('-')[0];
+            //            value = rida.Split('-')[1];
+            //            maakond_linn.Add(key, value);
+            //        }
+            //        foreach (KeyValuePair<string, string> keyValue in maakond_linn)
+            //        {
+            //            Console.WriteLine(keyValue.Key + " pealinn on " + keyValue.Value);
+            //        }
+            //    }
+            //    else if (o == 2)
+            //    {
+            //        try
+            //        {
+            //            StreamWriter text = new StreamWriter(@"..\..\..\pealinna_maakond.txt", true);
+            //            Console.WriteLine("Sisesta maakonda nimetus: ");
+            //            string maakond = Console.ReadLine();
+            //            Console.WriteLine("Sisesta linn nimetus: ");
+            //            string linn = Console.ReadLine();
+            //            string lause = maakond + " - " + linn;
+            //            text.WriteLine(lause);
+            //            text.Close();
+            //        }
+            //        catch (Exception)
+            //        {
+            //            Console.WriteLine("Viga failiga!");
+            //        }
+            //    }
+            //    else if (o == 3)
+            //    {
+            //        Console.WriteLine("Sisesta maakond või pealinn");
+            //        string l = Console.ReadLine();
+            //    }
+            //}
         }
     }
 }
