@@ -1,9 +1,6 @@
-<<<<<<< HEAD
 ﻿using System;
 using System.Collections;
-=======
 using System;
->>>>>>> 0468b72540f7d86e319868c9b3fcaa872569b337
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -232,7 +229,6 @@ namespace TARpv23_CSharp
 
             // 4. Ütle kasutajale "Osta elevant ära!". Senikaua korda küsimust, kuni kasutaja lõpuks ise kirjutab "elevant".
             string Kasutaja_sisestamine = " ";
-<<<<<<< HEAD
             while (Kasutaja_sisestamine.ToLower() != "elevant")
             {
                 Console.WriteLine("Osta elevant ära!");
@@ -249,7 +245,7 @@ namespace TARpv23_CSharp
             }
             while (!string.Equals(Kasutaja_sisestamine_1, "elevant", StringComparison.OrdinalIgnoreCase));
             Console.WriteLine("Müüdud!"); 
-=======
+
             do
             {
                 Console.WriteLine("Osta elevant ära!");
@@ -257,18 +253,18 @@ namespace TARpv23_CSharp
             }
             while (!string.Equals(Kasutaja_sisestamine, "elevant", StringComparison.OrdinalIgnoreCase));
             Console.WriteLine("Müüdud!");
->>>>>>> 0468b72540f7d86e319868c9b3fcaa872569b337
+
 
             //5. Mis arv mõtles välja arvuti? Kasuta vähemalt 5 katset, et seda teada.
             int arvutiArv = random.Next(1, 25);
             int kasutajaArv;
             int katsed = 0;
             bool arvatiOigesti = false;
-<<<<<<< HEAD
+
             Console.WriteLine("Programm on mõelnud välja arvu vahemikus 1 kuni 25, sul on 5 katset.");
-=======
+
             Console.WriteLine("Programm on mõelnud välja arvu vahemikus 1 kuni 50, sul on 5 katset.");
->>>>>>> 0468b72540f7d86e319868c9b3fcaa872569b337
+
             while (katsed < 5 && !arvatiOigesti)
             {
                 Console.Write("Sisesta oma arvatav arv: ");
@@ -303,7 +299,6 @@ namespace TARpv23_CSharp
             var numbrite_sorteerimine = neli_numbrit.OrderByDescending(d => d).ToArray();
             string suurim_number = string.Concat(numbrite_sorteerimine);
             Console.WriteLine("Swuurim number: " + suurim_number);
-<<<<<<< HEAD
 
             // 6.1. Küsi kasutajalt 4 arvu ning väljasta nendest koostatud suurim neliarvuline arv.
             int[] neliArvu = new int[4];
@@ -373,8 +368,6 @@ namespace TARpv23_CSharp
             {
                 Console.WriteLine(inimene.Nimi + " on " + inimene.Vanus + "aasta vana");
             }
-=======
->>>>>>> 0468b72540f7d86e319868c9b3fcaa872569b337
         }
     }
 }
