@@ -112,7 +112,6 @@ namespace TARpv23_CSharp
                 string vastus0 = Funktsioonid.Pikkuse_analuus(pikkus);
                 Console.WriteLine("Sinu pikkus on {0} m, sa oled {1}", pikkus, vastus0);
             }
-
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
@@ -246,25 +245,12 @@ namespace TARpv23_CSharp
             while (!string.Equals(Kasutaja_sisestamine_1, "elevant", StringComparison.OrdinalIgnoreCase));
             Console.WriteLine("Müüdud!"); 
 
-            do
-            {
-                Console.WriteLine("Osta elevant ära!");
-                Kasutaja_sisestamine = Console.ReadLine();
-            }
-            while (!string.Equals(Kasutaja_sisestamine, "elevant", StringComparison.OrdinalIgnoreCase));
-            Console.WriteLine("Müüdud!");
-
-
             //5. Mis arv mõtles välja arvuti? Kasuta vähemalt 5 katset, et seda teada.
             int arvutiArv = random.Next(1, 25);
             int kasutajaArv;
             int katsed = 0;
             bool arvatiOigesti = false;
-
             Console.WriteLine("Programm on mõelnud välja arvu vahemikus 1 kuni 25, sul on 5 katset.");
-
-            Console.WriteLine("Programm on mõelnud välja arvu vahemikus 1 kuni 50, sul on 5 katset.");
-
             while (katsed < 5 && !arvatiOigesti)
             {
                 Console.Write("Sisesta oma arvatav arv: ");
