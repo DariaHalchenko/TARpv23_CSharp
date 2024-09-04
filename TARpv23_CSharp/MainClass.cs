@@ -8,6 +8,7 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using static TARpv23_CSharp.Inimene;
 namespace TARpv23_CSharp
 {
     public class MainClass
@@ -232,7 +233,7 @@ namespace TARpv23_CSharp
             while (Kasutaja_sisestamine.ToLower() != "elevant")
             {
                 Console.WriteLine("Osta elevant ära!");
-                Kasutaja_sisestamine = Console.ReadLine(); 
+                Kasutaja_sisestamine = Console.ReadLine();
             }
             Console.WriteLine("Müüdud!");
 
@@ -244,7 +245,7 @@ namespace TARpv23_CSharp
                 Kasutaja_sisestamine_1 = Console.ReadLine();
             }
             while (!string.Equals(Kasutaja_sisestamine_1, "elevant", StringComparison.OrdinalIgnoreCase));
-            Console.WriteLine("Müüdud!"); 
+            Console.WriteLine("Müüdud!");
 
             //5. Mis arv mõtles välja arvuti? Kasuta vähemalt 5 katset, et seda teada.
             int arvutiArv = random.Next(1, 25);
@@ -280,8 +281,8 @@ namespace TARpv23_CSharp
             int[] neli_numbrit = new int[4];
             for (int i = 0; i < 4; i++)
             {
-                 Console.Write("Sisestage neli numbrit {0}: ", i + 1);
-                 neli_numbrit[i] = int.Parse(Console.ReadLine());
+                Console.Write("Sisestage neli numbrit {0}: ", i + 1);
+                neli_numbrit[i] = int.Parse(Console.ReadLine());
             }
             var numbrite_sorteerimine = neli_numbrit.OrderByDescending(d => d).ToArray();
             string suurim_number = string.Concat(numbrite_sorteerimine);
@@ -293,14 +294,14 @@ namespace TARpv23_CSharp
             {
                 Console.Write("Sisestage neli numbrit {0}: ", i + 1);
                 neliArvu[i] = int.Parse(Console.ReadLine());
-            } 
+            }
             Array.Sort(neliArvu);
-            Array.Reverse(neliArvu);;
+            Array.Reverse(neliArvu); ;
             string suurimArv = string.Join("", neliArvu);
-            Console.WriteLine("Swuurim number: " + int.Parse (suurimArv)); 
-            
+            Console.WriteLine("Swuurim number: " + int.Parse(suurimArv));
+
             //II. osa listid ja sõnastikud 
-            List<string> abc = new List<string> ();
+            List<string> abc = new List<string>();
             try
             {
                 foreach (string rida in File.ReadAllLines(@"..\..\..\ABC.txt"))
@@ -316,26 +317,26 @@ namespace TARpv23_CSharp
             {
                 Console.WriteLine(e);
             }
-            Console.ReadLine(); 
+            Console.ReadLine();
 
             //
-            ArrayList arrayList = new ArrayList ();
+            ArrayList arrayList = new ArrayList();
             arrayList.Add("Esimene");
             arrayList.Add("Teine");
             arrayList.Add("Kolmas");
             Console.WriteLine("Otsing: ");
-            string vas=Console.ReadLine();
+            string vas = Console.ReadLine();
             if (vas != null && arrayList.Contains(vas))
             {
-                Console.WriteLine("Otsitav element asub " + arrayList.IndexOf(vas) +".kohal");
+                Console.WriteLine("Otsitav element asub " + arrayList.IndexOf(vas) + ".kohal");
             }
             else
             {
                 Console.WriteLine("Kokku oli" + arrayList.Count + " elemente, vaid otsitav puudub");
             }
             ArrayList arrayList1 = new ArrayList();
-            arrayList1.Insert(0, "Inna");  
-            arrayList1.Insert(1, "Anna"); 
+            arrayList1.Insert(0, "Inna");
+            arrayList1.Insert(1, "Anna");
             foreach (var item in arrayList1)
             {
                 Console.WriteLine(item);
@@ -347,17 +348,17 @@ namespace TARpv23_CSharp
             //Console.WriteLine(); 
 
             ///III. osa OOP 
-            List<Inimene> inimesed = new List<Inimene> ();
-            Inimene inimene1 = new Inimene ();
+            List<Inimene> inimesed = new List<Inimene>();
+            Inimene inimene1 = new Inimene();
             inimene1.Nimi = "Pjotr 1";
             inimene1.Vanus = 352;
-            Inimene inimene2 = new Inimene ("Jelizaveta");
+            Inimene inimene2 = new Inimene("Jelizaveta");
             inimene2.Vanus = 98;
             Inimene inimene3 = new Inimene("Daria", 17);
             inimesed.Add(inimene1);
             inimesed.Add(inimene2);
             inimesed.Add(inimene3);
-            inimesed.Add(new Inimene ("Valeria", 17));
+            inimesed.Add(new Inimene("Valeria", 17));
             foreach (Inimene inimene in inimesed)
             {
                 Console.WriteLine(inimene.Nimi + " on " + inimene.Vanus + " aasta vana");
@@ -415,7 +416,7 @@ namespace TARpv23_CSharp
 
                 newlist[i] = a_1;
             }
-            Console.WriteLine("New list of sums"); 
+            Console.WriteLine("New list of sums");
             Console.WriteLine(string.Join(" ", newlist));
 
 
@@ -503,6 +504,31 @@ namespace TARpv23_CSharp
             //        string l = Console.ReadLine();
             //    }
             //}
+
+            // Ülesanne 3
+            List<Inimene> inimesed_1 = new List<Inimene>();
+            Inimene inimene_1 = new Inimene("Pjotr 1", 52, Sugu.mees, 180, 87);
+            Inimene inimene_2 = new Inimene("Jelizaveta", 23, Sugu.naine, 175, 65);
+            Inimene inimene_3 = new Inimene("Daria", 17, Sugu.naine, 155, 40);
+            Inimene inimene_4 = new Inimene("Valeria", 17, Sugu.naine, 170, 42);
+            Inimene inimene_5 = new Inimene("Maksim", 18, Sugu.mees, 180, 62);
+            inimesed_1.Add(inimene_1);
+            inimesed_1.Add(inimene_2);
+            inimesed_1.Add(inimene_3);
+            inimesed_1.Add(inimene_4);
+            inimesed_1.Add(inimene_5);
+            foreach (Inimene inimene in inimesed_1)
+            {
+                Console.WriteLine(inimene.Nimi + " on " + inimene.Vanus + " aasta vana" + ".Ta on " + inimene.Sugu + " SBI=" + inimene.HB_vorrand ());
+            } 
+            foreach (Inimene inimene in inimesed_1)
+            {
+                Console.WriteLine("Milline on " +inimene.Nimi + " elustill: (1 - Istuv eluviis/ 2 - Vähene aktiivsus/ 3 - Mõõdukas aktiivsus/ 4 - Kõrge aktiivsus/ 5 - Väga kõrge aktiivsus)");
+                int elustiili_sisend = Convert.ToInt32(Console.ReadLine());
+                Eluviis eluviis = (Eluviis)elustiili_sisend; 
+                double kohandatud_SBI = inimene.Eluviis_2(inimene.HB_vorrand(), eluviis);
+                Console.WriteLine(inimene.Nimi, " kohandatud SBI: " + kohandatud_SBI); 
+            }
         }
     }
 }
