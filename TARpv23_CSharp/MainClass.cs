@@ -41,6 +41,7 @@ namespace TARpv23_CSharp
             }
 
             // 1. Kui eesnimi on Juku siis lähme Jukuga kinno. Lisa valiku, kus Juku vanuse alusel otsustate mis pilet talle vaja osta.
+            
             Console.WriteLine("Tere tulemast!");
             Console.Write("Mis su nimi on? ");
             string eesnimi = Console.ReadLine();
@@ -57,6 +58,7 @@ namespace TARpv23_CSharp
             }
 
             // 2. Küsi kahe inimese nimed ning teata, et nad on täna pinginaabrid
+            
             Console.Write("Mis on sinu nimi? ");
             string nimi_1 = Console.ReadLine();
             Console.Write("Mis on sinu nimi? ");
@@ -71,6 +73,7 @@ namespace TARpv23_CSharp
             }
 
             // 3.Küsi ristkülikukujulise toa seinte pikkused ning arvuta põranda pindala. Küsi kasutajalt remondi tegemise soov, kui ta on positiivne, siis küsi kui palju maksab ruutmeeter ja leia põranda vahetamise hind
+            
             Console.WriteLine("Tere!");
             Console.Write("Mis on teie seinte pikkus? ");
             int pikkus_1 = int.Parse(Console.ReadLine());
@@ -94,6 +97,7 @@ namespace TARpv23_CSharp
             }
 
             // 5. Küsi temperatuur ning teata, kas see on üle kaheksateistkümne kraadi (soovitav toasoojus talvel).
+            
             Console.Write("Mis su temperatuur on? ");
             int temperatuuri = int.Parse(Console.ReadLine());
             if (temperatuuri > 18)
@@ -107,6 +111,7 @@ namespace TARpv23_CSharp
             }
 
             // 6. Küsi inimese pikkus ning teata, kas ta on lühike, keskmine või pikk (piirid pane ise paika)
+            
             try
             {
                 Console.WriteLine("Mis on sinu pikkus?");
@@ -156,6 +161,7 @@ namespace TARpv23_CSharp
             }
 
             // 1. Loo juhuslikult arvud N ja M ja sisesta massiivi arvud N'st M'ni.Trüki arvude ruudud ekraanile. N ja M arvud on vahemikus(-100,100).
+            
             int N = random.Next(-10, 101);
             Console.WriteLine(N);
             int M = random.Next(-10, 101);
@@ -175,6 +181,7 @@ namespace TARpv23_CSharp
             }
 
             // 2. Küsi kasutajalt viis arvu, salvesta neid massiivi ning väljasta nende summa, aritmeetiline keskmine ja korrutis.
+            
             int[] viis_arvu = new int[5];
             for (int i = 0; i < viis_arvu.Length; i++)
             {
@@ -194,6 +201,7 @@ namespace TARpv23_CSharp
             Console.WriteLine("Arvude korrutamine: " + korrutis);
 
             // 3. Küsi viielt kasutajalt nimed ja vanused, salvesta nende andmeid massiivi ning väljasta summaarne vanus, aritmeetiline keskmine, vaanema ja noorema inimeste nimed ja vanused.
+            
             string[] kasutajalt_nimed = new string[5];
             int[] vanuseid = new int[5];
             for (int i = 0; i < 5; i++)
@@ -229,6 +237,7 @@ namespace TARpv23_CSharp
             }
 
             // 4. Ütle kasutajale "Osta elevant ära!". Senikaua korda küsimust, kuni kasutaja lõpuks ise kirjutab "elevant".
+            
             string Kasutaja_sisestamine = " ";
             while (Kasutaja_sisestamine.ToLower() != "elevant")
             {
@@ -238,6 +247,7 @@ namespace TARpv23_CSharp
             Console.WriteLine("Müüdud!");
 
             // 4.1. Ütle kasutajale "Osta elevant ära!". Senikaua korda küsimust, kuni kasutaja lõpuks ise kirjutab "elevant".
+            
             string Kasutaja_sisestamine_1 = " ";
             do
             {
@@ -248,6 +258,7 @@ namespace TARpv23_CSharp
             Console.WriteLine("Müüdud!");
 
             //5. Mis arv mõtles välja arvuti? Kasuta vähemalt 5 katset, et seda teada.
+            
             int arvutiArv = random.Next(1, 25);
             int kasutajaArv;
             int katsed = 0;
@@ -278,6 +289,7 @@ namespace TARpv23_CSharp
             }
 
             // 6. Küsi kasutajalt 4 arvu ning väljasta nendest koostatud suurim neliarvuline arv.
+            
             int[] neli_numbrit = new int[4];
             for (int i = 0; i < 4; i++)
             {
@@ -289,6 +301,7 @@ namespace TARpv23_CSharp
             Console.WriteLine("Swuurim number: " + suurim_number);
 
             // 6.1. Küsi kasutajalt 4 arvu ning väljasta nendest koostatud suurim neliarvuline arv.
+            
             int[] neliArvu = new int[4];
             for (int i = 0; i < 4; i++)
             {
@@ -507,6 +520,7 @@ namespace TARpv23_CSharp
 
             // Ülesanne 3
             List<Inimene> inimesed_1 = new List<Inimene>();
+            List<Toode> koik_tooted = Toode.Toodete_loetelu();
             Inimene inimene_1 = new Inimene("Pjotr 1", 52, Sugu.mees, 180, 87);
             Inimene inimene_2 = new Inimene("Jelizaveta", 23, Sugu.naine, 175, 65);
             Inimene inimene_3 = new Inimene("Daria", 17, Sugu.naine, 155, 40);
@@ -519,17 +533,22 @@ namespace TARpv23_CSharp
             inimesed_1.Add(inimene_5);
             foreach (Inimene inimene in inimesed_1)
             {
-                Console.WriteLine(inimene.Nimi + " on " + inimene.Vanus + " aasta vana" + ".Ta on " + inimene.Sugu + " SBI=" + inimene.HB_vorrand ());
-            } 
-            foreach (Inimene inimene in inimesed_1)
-            {
+                Console.WriteLine(inimene.Nimi + " on " + inimene.Vanus + " aasta vana. Ta on " + inimene.Sugu + ". SBI=" + inimene.HB_vorrand ());
                 Console.WriteLine("Milline on " +inimene.Nimi + " elustill: (1 - Istuv eluviis/ 2 - Vähene aktiivsus/ 3 - Mõõdukas aktiivsus/ 4 - Kõrge aktiivsus/ 5 - Väga kõrge aktiivsus)");
                 int elustiili_sisend = Convert.ToInt32(Console.ReadLine());
-                Eluviis eluviis = (Eluviis)elustiili_sisend; 
+                Inimene.Eluviis eluviis = (Inimene.Eluviis)elustiili_sisend; 
                 double kohandatud_SBI = inimene.Eluviis_2(inimene.HB_vorrand(), eluviis);
                 Console.WriteLine(inimene.Nimi, " kohandatud SBI: " + kohandatud_SBI); 
-            }
-        }
+                double calorie_calculator = kohandatud_SBI; 
+                Console.WriteLine("Tooted, mida " + inimene.Nimi + " võib tarbida: ");
+                foreach(Toode toode in koik_tooted) 
+                {
+                    double maksimaalne_kogus = calorie_calculator / toode.Kaloreid * 100;
+                    Console.WriteLine(toode.Toodete_nimetus + " - " + toode.Kaloreid + " kcal / 100g. Maksimaalne kogus: " + maksimaalne_kogus + " g");
+                }
+                Console.WriteLine("\n");                
+            } 
+        }   
     }
 }
 
